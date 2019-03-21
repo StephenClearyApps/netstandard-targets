@@ -181,8 +181,42 @@ function buttonClick(platform, value) {
     $("#result").attr("value", result.indexOf(";") === -1 ? "<TargetFramework>" + result + "</TargetFramework>" : "<TargetFrameworks>" + result + "</TargetFrameworks>");
 }
 
-function preselect() {
+function unselectAll() {
+    for (let platform of Object.keys(support)) {
+        if (selected[platform]) {
+            $platformButton(platform, selected[platform]).removeClass("btn-primary").addClass("btn-light");
+            selected[platform] = "";
+        }
+    }
+}
 
+function selectModern() {
+    unselectAll();
+    buttonClick("netcoreapp", "2.0");
+    buttonClick("net", "4.7.2");
+}
+
+function selectLegacy() {
+    unselectAll();
+    buttonClick("netcoreapp", "1.0");
+    buttonClick("net", "4.5");
+    buttonClick("mono", "4.6");
+    buttonClick("xamarinios", "10.0");
+    buttonClick("xamarinandroid", "7.0");
+    buttonClick("xamarinmac", "3.0");
+    buttonClick("uwp", "10.0");
+    buttonClick("unity", "2018.1");
+    buttonClick("win", "8.0");
+    buttonClick("wpa", "8.1");
+    buttonClick("wpsl", "8.0");
+}
+
+function selectFuture() {
+    unselectAll();
+    buttonClick("netcoreapp", "3.0 (preview)");
+    buttonClick("mono", "6.2 (preview)");
+    buttonClick("xamarinios", "12.12 (preview)");
+    buttonClick("xamarinandroid", "9.3 (preview)");
 }
 
 function addClickHandlers(platform) {
@@ -197,4 +231,9 @@ $(function () {
     for (let platform of Object.keys(support)) {
         addClickHandlers(platform);
     }
+    $("#preselect-modern").click(selectModern);
+    $("#preselect-future").click(selectFuture);
+    $("#preselect-legacy").click(selectLegacy);
+
+    selectModern();
 });
