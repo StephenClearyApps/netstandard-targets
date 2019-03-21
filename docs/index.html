@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css" />
+
+  <title>.NET Standard Target Chooser</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1>.NET Standard Target Chooser</h1>
+
+        <p>So, you have a <i>general-purpose library</i> and want to target <b>netstandard</b>? This site will help you!</p>
+
+        <p>Just select your desired platform support, and this tool will generate the target frameworks you need to paste into your csproj file.</p>
+
+        <h2>Step 1: Select Platforms</h2>
+
+        <table class="table table-sm" id="options-table">
+          <thead>
+            <tr>
+              <th scope="col">Platform</th>
+              <th scope="col">Version</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>.NET Core</td>
+              <td>
+                <div class="btn-group btn-group-sm" role="group" id="buttons-netcoreapp">
+                  <button type="button" class="btn btn-light">1.0</button>
+                  <button type="button" class="btn btn-light">1.1</button>
+                  <button type="button" class="btn btn-primary">2.0</button>
+                  <button type="button" class="btn btn-light">2.1</button>
+                  <button type="button" class="btn btn-light">2.2</button>
+                  <button type="button" class="btn btn-light">3.0 (preview)</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>.NET Framework</td>
+              <td>
+                <div class="btn-group btn-group-sm" role="group" id="buttons-net">
+                  <button type="button" class="btn btn-light">4.5</button>
+                  <button type="button" class="btn btn-light">4.5.1</button>
+                  <button type="button" class="btn btn-light">4.5.2</button>
+                  <button type="button" class="btn btn-light">4.6</button>
+                  <button type="button" class="btn btn-light">4.6.1</button>
+                  <button type="button" class="btn btn-light">4.6.2</button>
+                  <button type="button" class="btn btn-light">4.7</button>
+                  <button type="button" class="btn btn-light">4.7.1</button>
+                  <button type="button" class="btn btn-primary">4.7.2</button>
+                  <button type="button" class="btn btn-light">4.8 (preview)</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Unity</td>
+              <td>
+                <div class="btn-group btn-group-sm" role="group" id="buttons-unity">
+                  <button type="button" class="btn btn-light">2018.1</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Mono</td>
+              <td>
+                <div class="btn-group btn-group-sm" role="group" id="buttons-mono">
+                  <button type="button" class="btn btn-light">4.6</button>
+                  <button type="button" class="btn btn-light">5.4</button>
+                  <button type="button" class="btn btn-light">6.2 (preview)</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Xamarin.iOS</td>
+              <td>
+                <div class="btn-group btn-group-sm" role="group" id="buttons-xamarinios">
+                  <button type="button" class="btn btn-light">10.0</button>
+                  <button type="button" class="btn btn-light">10.14</button>
+                  <button type="button" class="btn btn-light">12.12 (preview)</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Xamarin.Android</td>
+              <td>
+                <div class="btn-group btn-group-sm" role="group" id="buttons-xamarinandroid">
+                  <button type="button" class="btn btn-light">7.0</button>
+                  <button type="button" class="btn btn-light">8.0</button>
+                  <button type="button" class="btn btn-light">9.3 (preview)</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Xamarin.Mac</td>
+              <td>
+                <div class="btn-group btn-group-sm" role="group" id="buttons-xamarinmac">
+                  <button type="button" class="btn btn-light">3.0</button>
+                  <button type="button" class="btn btn-light">3.8</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Universal Windows</td>
+              <td>
+                <div class="btn-group btn-group-sm" role="group" id="buttons-uwp">
+                  <button type="button" class="btn btn-light">10.0</button>
+                  <button type="button" class="btn btn-light">10.0.16299</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Windows Store</td>
+              <td>
+                <div class="btn-group btn-group-sm" role="group" id="buttons-win">
+                  <button type="button" class="btn btn-light">8.0</button>
+                  <button type="button" class="btn btn-light">8.1</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Windows Phone Apps</td>
+              <td>
+                <div class="btn-group btn-group-sm" role="group" id="buttons-wpa">
+                  <button type="button" class="btn btn-light">8.1</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Windows Phone Silverlight</td>
+              <td>
+                <div class="btn-group btn-group-sm" role="group" id="buttons-wpsl">
+                  <button type="button" class="btn btn-light">8.0</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Step 2: Copy Result</h2>
+
+        <form>
+          <div class="form-group">
+            <label for="result">Your csproj target framework should be:</label>
+            <input class="form-control" type="text" id="result" readonly value="&lt;TargetFrameworks&gt;netstandard2.0;net461&lt;/TargetFrameworks&gt;">
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <script src="script.js"></script>
+
+  <!-- TODO: Google Analytics -->
+</body>
+
+</html>
